@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="apple-itunes-app" content="app-id=PLACEHOLDER">
+<title>Join on Links Up Golf</title>
+<style>
+  :root {
+    --primary: #2E7D5C;
+    --primary-dark: #1F5A41;
+    --bg: #F7F9F7;
+    --text: #1A2421;
+    --muted: #6B7872;
+    --card: #FFFFFF;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+  .wrap {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 32px 20px 60px;
+    text-align: center;
+  }
+  .logo {
+    font-size: 56px;
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+  h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text);
+  }
+  .subtitle {
+    font-size: 16px;
+    color: var(--muted);
+    margin-bottom: 28px;
+  }
+  .group-name {
+    font-weight: 600;
+    color: var(--primary);
+  }
+  .card {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 24px 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    border: 1px solid rgba(0,0,0,0.05);
+  }
+  .code-label {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .code {
+    font-size: 38px;
+    font-weight: 800;
+    letter-spacing: 6px;
+    color: var(--primary-dark);
+    font-variant-numeric: tabular-nums;
+    word-break: break-all;
+    margin-bottom: 14px;
+  }
+  .copy-btn {
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .copy-btn:active { background: var(--primary); color: white; }
+  .cta {
+    display: block;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    padding: 16px 24px;
+    border-radius: 14px;
+    font-size: 17px;
+    font-weight: 600;
+    margin-top: 8px;
+    box-shadow: 0 4px 14px rgba(46, 125, 92, 0.3);
+  }
+  .cta:active { background: var(--primary-dark); }
+  .secondary-cta {
+    display: block;
+    background: transparent;
+    color: var(--primary);
+    text-decoration: none;
+    padding: 14px 24px;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 12px;
+    border: 1px solid var(--primary);
+  }
+  .steps {
+    text-align: left;
+    margin-top: 20px;
+    padding: 0 8px;
+  }
+  .steps h2 {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--muted);
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+  .steps ol {
+    padding-left: 0;
+    list-style: none;
+    counter-reset: step;
+  }
+  .steps li {
+    counter-increment: step;
+    padding: 10px 0 10px 38px;
+    position: relative;
+    font-size: 15px;
+    line-height: 1.5;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+  .steps li:last-child { border-bottom: none; }
+  .steps li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 26px;
+    height: 26px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .footer {
+    margin-top: 40px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .footer a { color: var(--muted); text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="logo">⛳️</div>
+  <h1>You're invited!</h1>
+  <p class="subtitle">Join <span class="group-name" id="group-name">a golf group</span> on Links Up Golf</p>
+
+  <div class="card">
+    <div class="code-label">Your join code</div>
+    <div class="code" id="code">------</div>
+    <button class="copy-btn" onclick="copyCode()">Copy code</button>
+  </div>
+
+  <a class="cta" id="install-btn" href="https://testflight.apple.com/join/auTCzZ8A">Get the App (TestFlight)</a>
+  <a class="secondary-cta" id="open-app-btn" href="#">Already have the app? Open it</a>
+
+  <div class="steps">
+    <h2>How to join</h2>
+    <ol>
+      <li>Tap <strong>Get the App</strong> above to install Links Up Golf via TestFlight</li>
+      <li>Open the app and create your account</li>
+      <li>Tap the <strong>Groups</strong> tab, then <strong>+ → Join with Code</strong></li>
+      <li>Enter the code <strong id="code-inline">above</strong> and you're in</li>
+    </ol>
+  </div>
+
+  <div class="footer">
+    Links Up Golf · <a href="index.html">Privacy Policy</a> · <a href="linksup-support.html">Support</a>
+  </div>
+</div>
+
+<script>
+  // Read query params — supports both group invites and tee time invites
+  var params = new URLSearchParams(window.location.search);
+  var code = (params.get('code') || '').toUpperCase();
+  var groupName = params.get('group') || '';
+  var groupId = params.get('id') || '';
+  var teeTimeId = params.get('teeTime') || '';
+  var courseName = params.get('course') || '';
+  var dateLabel = params.get('date') || '';
+
+  if (teeTimeId) {
+    // Tee time invite mode
+    document.querySelector('h1').textContent = "You're invited to play!";
+    var subtitle = courseName || 'a round of golf';
+    if (dateLabel) subtitle += ' on ' + decodeURIComponent(dateLabel);
+    document.getElementById('group-name').textContent = subtitle;
+    // Hide the code card for tee time invites (no code needed)
+    document.querySelector('.card').style.display = 'none';
+    // Update steps
+    var stepsOl = document.querySelector('.steps ol');
+    stepsOl.innerHTML =
+      '<li>Tap <strong>Get the App</strong> above to install Links Up Golf via TestFlight</li>' +
+      '<li>Open the app and create your account</li>' +
+      '<li>Open the tee time from the <strong>Tee Times</strong> tab and join the round</li>';
+    // Deep link for existing users
+    var deepLink = 'linksup://teeTime/' + encodeURIComponent(teeTimeId);
+    document.getElementById('open-app-btn').setAttribute('href', deepLink);
+  } else {
+    // Group invite mode (default)
+    if (code) {
+      document.getElementById('code').textContent = code;
+      document.getElementById('code-inline').textContent = code;
+    }
+    if (groupName) {
+      try { document.getElementById('group-name').textContent = decodeURIComponent(groupName); }
+      catch (e) { document.getElementById('group-name').textContent = groupName; }
+    }
+    var deepLink = 'linksup://group/' + encodeURIComponent(groupId || '');
+    document.getElementById('open-app-btn').setAttribute('href', deepLink);
+  }
+
+  function copyCode() {
+    var c = document.getElementById('code').textContent;
+    if (!c || c === '------') return;
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(c).then(function() {
+        var btn = document.querySelector('.copy-btn');
+        var orig = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(function() { btn.textContent = orig; }, 1500);
+      });
+    }
+  }
+</script>
+</body>
+</html>
