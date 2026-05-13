@@ -1,248 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="apple-itunes-app" content="app-id=PLACEHOLDER">
-<title>Join on Links Up Golf</title>
-<style>
-  :root {
-    --primary: #2E7D5C;
-    --primary-dark: #1F5A41;
-    --bg: #F7F9F7;
-    --text: #1A2421;
-    --muted: #6B7872;
-    --card: #FFFFFF;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    -webkit-font-smoothing: antialiased;
-    min-height: 100vh;
-  }
-  .wrap {
-    max-width: 480px;
-    margin: 0 auto;
-    padding: 32px 20px 60px;
-    text-align: center;
-  }
-  .logo {
-    font-size: 56px;
-    line-height: 1;
-    margin-bottom: 12px;
-  }
-  h1 {
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 8px;
-    color: var(--text);
-  }
-  .subtitle {
-    font-size: 16px;
-    color: var(--muted);
-    margin-bottom: 28px;
-  }
-  .group-name {
-    font-weight: 600;
-    color: var(--primary);
-  }
-  .card {
-    background: var(--card);
-    border-radius: 16px;
-    padding: 24px 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-    border: 1px solid rgba(0,0,0,0.05);
-  }
-  .code-label {
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: var(--muted);
-    margin-bottom: 8px;
-  }
-  .code {
-    font-size: 38px;
-    font-weight: 800;
-    letter-spacing: 6px;
-    color: var(--primary-dark);
-    font-variant-numeric: tabular-nums;
-    word-break: break-all;
-    margin-bottom: 14px;
-  }
-  .copy-btn {
-    background: transparent;
-    border: 1px solid var(--primary);
-    color: var(--primary);
-    padding: 8px 16px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-  }
-  .copy-btn:active { background: var(--primary); color: white; }
-  .cta {
-    display: block;
-    background: var(--primary);
-    color: white;
-    text-decoration: none;
-    padding: 16px 24px;
-    border-radius: 14px;
-    font-size: 17px;
-    font-weight: 600;
-    margin-top: 8px;
-    box-shadow: 0 4px 14px rgba(46, 125, 92, 0.3);
-  }
-  .cta:active { background: var(--primary-dark); }
-  .secondary-cta {
-    display: block;
-    background: transparent;
-    color: var(--primary);
-    text-decoration: none;
-    padding: 14px 24px;
-    border-radius: 14px;
-    font-size: 16px;
-    font-weight: 600;
-    margin-top: 12px;
-    border: 1px solid var(--primary);
-  }
-  .steps {
-    text-align: left;
-    margin-top: 20px;
-    padding: 0 8px;
-  }
-  .steps h2 {
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--muted);
-    margin-bottom: 12px;
-    font-weight: 600;
-  }
-  .steps ol {
-    padding-left: 0;
-    list-style: none;
-    counter-reset: step;
-  }
-  .steps li {
-    counter-increment: step;
-    padding: 10px 0 10px 38px;
-    position: relative;
-    font-size: 15px;
-    line-height: 1.5;
-    border-bottom: 1px solid rgba(0,0,0,0.06);
-  }
-  .steps li:last-child { border-bottom: none; }
-  .steps li::before {
-    content: counter(step);
-    position: absolute;
-    left: 0;
-    top: 10px;
-    width: 26px;
-    height: 26px;
-    background: var(--primary);
-    color: white;
-    border-radius: 50%;
-    font-size: 13px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .footer {
-    margin-top: 40px;
-    font-size: 13px;
-    color: var(--muted);
-  }
-  .footer a { color: var(--muted); text-decoration: underline; }
-</style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- TODO: Replace PLACEHOLDER with your real App Store ID once published -->
+    <meta name="apple-itunes-app" content="app-id=PLACEHOLDER" />
+    <title>Join on Links Up Golf</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f0f4f0;
+            color: #1a1a1a;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .card {
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            max-width: 420px;
+            width: 90%;
+            margin: 40px auto 24px;
+            padding: 36px 28px 28px;
+            text-align: center;
+        }
+        .emoji { font-size: 48px; margin-bottom: 12px; }
+        h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: #1a1a1a;
+        }
+        .subtitle {
+            font-size: 15px;
+            color: #666;
+            margin-bottom: 24px;
+        }
+        /* Join code block */
+        .code-label {
+            font-size: 13px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+        .code-box {
+            background: #f0f4f0;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 8px;
+        }
+        .code-value {
+            font-size: 32px;
+            font-weight: 800;
+            letter-spacing: 4px;
+            color: #2d6a4f;
+        }
+        .copy-btn {
+            display: inline-block;
+            font-size: 13px;
+            color: #2d6a4f;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            background: none;
+            padding: 6px 12px;
+            margin-bottom: 20px;
+        }
+        .copy-btn:hover { text-decoration: underline; }
+        /* Tee time detail block */
+        .detail-box {
+            background: #f0f4f0;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .detail-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .detail-row:last-child { margin-bottom: 0; }
+        .detail-icon { font-size: 18px; width: 24px; text-align: center; }
+        .detail-text { font-size: 15px; color: #333; }
+        /* Buttons */
+        .btn-primary {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            text-align: center;
+            margin-bottom: 10px;
+            cursor: pointer;
+            border: none;
+        }
+        .btn-green {
+            background: #2d6a4f;
+            color: #fff;
+        }
+        .btn-green:hover { background: #245a42; }
+        .btn-outline {
+            background: transparent;
+            color: #2d6a4f;
+            border: 2px solid #2d6a4f;
+        }
+        .btn-outline:hover { background: #f0f4f0; }
+        /* Steps */
+        .steps {
+            max-width: 420px;
+            width: 90%;
+            margin: 0 auto 32px;
+            text-align: left;
+        }
+        .steps h2 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #333;
+        }
+        .step {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 14px;
+            font-size: 14px;
+            color: #555;
+            line-height: 1.5;
+        }
+        .step-num {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            background: #2d6a4f;
+            color: #fff;
+            border-radius: 50%;
+            font-size: 13px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .step strong { color: #1a1a1a; }
+        /* Footer */
+        .footer {
+            font-size: 12px;
+            color: #999;
+            text-align: center;
+            padding: 20px;
+        }
+        .footer a { color: #2d6a4f; text-decoration: none; }
+        .footer a:hover { text-decoration: underline; }
+    </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="logo">⛳️</div>
-  <h1>You're invited!</h1>
-  <p class="subtitle">Join <span class="group-name" id="group-name">a golf group</span> on Links Up Golf</p>
 
-  <div class="card">
-    <div class="code-label">Your join code</div>
-    <div class="code" id="code">------</div>
-    <button class="copy-btn" onclick="copyCode()">Copy code</button>
-  </div>
+<div class="card" id="card">
+    <!-- Content injected by JS based on query params -->
+</div>
 
-  <a class="cta" id="install-btn" href="https://testflight.apple.com/join/auTCzZ8A">Get the App (TestFlight)</a>
-  <a class="secondary-cta" id="open-app-btn" href="#">Already have the app? Open it</a>
+<div class="steps" id="steps">
+    <!-- Steps injected by JS -->
+</div>
 
-  <div class="steps">
-    <h2>How to join</h2>
-    <ol>
-      <li>Tap <strong>Get the App</strong> above to install Links Up Golf via TestFlight</li>
-      <li>Open the app and create your account</li>
-      <li>Tap the <strong>Groups</strong> tab, then <strong>+ → Join with Code</strong></li>
-      <li>Enter the code <strong id="code-inline">above</strong> and you're in</li>
-    </ol>
-  </div>
-
-  <div class="footer">
-    Links Up Golf · <a href="index.html">Privacy Policy</a> · <a href="linksup-support.html">Support</a>
-  </div>
+<div class="footer">
+    Links Up Golf &middot;
+    <a href="https://linksup-app.github.io/linksup-privacy/index.html">Privacy Policy</a> &middot;
+    <a href="https://linksup-app.github.io/linksup-privacy/linksup-support.html">Support</a>
 </div>
 
 <script>
-  // Read query params — supports both group invites and tee time invites
-  var params = new URLSearchParams(window.location.search);
-  var code = (params.get('code') || '').toUpperCase();
-  var groupName = params.get('group') || '';
-  var groupId = params.get('id') || '';
-  var teeTimeId = params.get('teeTime') || '';
-  var courseName = params.get('course') || '';
-  var dateLabel = params.get('date') || '';
+(function() {
+    var params = new URLSearchParams(window.location.search);
 
-  if (teeTimeId) {
-    // Tee time invite mode
-    document.querySelector('h1').textContent = "You're invited to play!";
-    var subtitle = courseName || 'a round of golf';
-    if (dateLabel) subtitle += ' on ' + decodeURIComponent(dateLabel);
-    document.getElementById('group-name').textContent = subtitle;
-    // Hide the code card for tee time invites (no code needed)
-    document.querySelector('.card').style.display = 'none';
-    // Update steps
-    var stepsOl = document.querySelector('.steps ol');
-    stepsOl.innerHTML =
-      '<li>Tap <strong>Get the App</strong> above to install Links Up Golf via TestFlight</li>' +
-      '<li>Open the app and create your account</li>' +
-      '<li>Open the tee time from the <strong>Tee Times</strong> tab and join the round</li>';
-    // Deep link for existing users
-    var deepLink = 'linksup://teeTime/' + encodeURIComponent(teeTimeId);
-    document.getElementById('open-app-btn').setAttribute('href', deepLink);
-  } else {
-    // Group invite mode (default)
-    if (code) {
-      document.getElementById('code').textContent = code;
-      document.getElementById('code-inline').textContent = code;
-    }
-    if (groupName) {
-      try { document.getElementById('group-name').textContent = decodeURIComponent(groupName); }
-      catch (e) { document.getElementById('group-name').textContent = groupName; }
-    }
-    var deepLink = 'linksup://group/' + encodeURIComponent(groupId || '');
-    document.getElementById('open-app-btn').setAttribute('href', deepLink);
-  }
+    // ─── App download URL ───
+    // TODO: Replace with your App Store link once published, e.g.:
+    // var appURL = "https://apps.apple.com/app/links-up-golf/id1234567890";
+    var appURL = "https://apps.apple.com/app/links-up-golf/id0000000000";
 
-  function copyCode() {
-    var c = document.getElementById('code').textContent;
-    if (!c || c === '------') return;
-    if (navigator.clipboard) {
-      navigator.clipboard.writeText(c).then(function() {
-        var btn = document.querySelector('.copy-btn');
-        var orig = btn.textContent;
-        btn.textContent = 'Copied!';
-        setTimeout(function() { btn.textContent = orig; }, 1500);
-      });
+    // Detect invite type from query params
+    var isGroup   = params.has('code');
+    var isTeeTime = params.has('teeTime');
+
+    var card  = document.getElementById('card');
+    var steps = document.getElementById('steps');
+
+    // ─── Deep link for "Open in app" ───
+    var deepLink = '';
+    if (isGroup && params.get('id')) {
+        deepLink = 'linksup://group/' + encodeURIComponent(params.get('id'));
+    } else if (isTeeTime && params.get('teeTime')) {
+        deepLink = 'linksup://teeTime/' + encodeURIComponent(params.get('teeTime'));
     }
-  }
+
+    if (isGroup) {
+        // ─── Group Invite ───
+        var groupName = params.get('group') || 'a golf group';
+        var code      = params.get('code')  || '';
+
+        document.title = 'Join ' + groupName + ' on Links Up Golf';
+
+        card.innerHTML =
+            '<div class="emoji">⛳️</div>' +
+            '<h1>You\'re invited!</h1>' +
+            '<p class="subtitle">Join <strong>' + escapeHTML(groupName) + '</strong> on Links Up Golf</p>' +
+            '<div class="code-label">Your join code</div>' +
+            '<div class="code-box"><span class="code-value" id="codeVal">' + escapeHTML(code) + '</span></div>' +
+            '<button class="copy-btn" id="copyBtn">Copy code</button>' +
+            '<a href="' + appURL + '" class="btn-primary btn-green">Download Links Up Golf</a>' +
+            (deepLink
+                ? '<a href="' + deepLink + '" class="btn-primary btn-outline">Already have the app? Open it</a>'
+                : '');
+
+        steps.innerHTML =
+            '<h2>How to join</h2>' +
+            '<div class="step"><span class="step-num">1</span><span>Tap <strong>Download Links Up Golf</strong> above to get the app</span></div>' +
+            '<div class="step"><span class="step-num">2</span><span>Open the app and create your account</span></div>' +
+            '<div class="step"><span class="step-num">3</span><span>Tap the <strong>Groups</strong> tab, then <strong>+ → Join with Code</strong></span></div>' +
+            '<div class="step"><span class="step-num">4</span><span>Enter the code <strong>' + escapeHTML(code) + '</strong> and you\'re in!</span></div>';
+
+        // Copy button
+        setTimeout(function() {
+            var btn = document.getElementById('copyBtn');
+            if (btn) {
+                btn.addEventListener('click', function() {
+                    if (navigator.clipboard) {
+                        navigator.clipboard.writeText(code);
+                        btn.textContent = 'Copied!';
+                    } else {
+                        // Fallback for older browsers
+                        var ta = document.createElement('textarea');
+                        ta.value = code;
+                        document.body.appendChild(ta);
+                        ta.select();
+                        document.execCommand('copy');
+                        document.body.removeChild(ta);
+                        btn.textContent = 'Copied!';
+                    }
+                    setTimeout(function(){ btn.textContent = 'Copy code'; }, 2000);
+                });
+            }
+        }, 0);
+
+    } else if (isTeeTime) {
+        // ─── Tee Time Invite ───
+        var course = params.get('course') || 'a golf course';
+        var date   = params.get('date')   || '';
+
+        document.title = 'Tee Time at ' + course + ' — Links Up Golf';
+
+        card.innerHTML =
+            '<div class="emoji">🏌️</div>' +
+            '<h1>You\'re invited!</h1>' +
+            '<p class="subtitle">Join a tee time on Links Up Golf</p>' +
+            '<div class="detail-box">' +
+                '<div class="detail-row"><span class="detail-icon">⛳️</span><span class="detail-text"><strong>' + escapeHTML(course) + '</strong></span></div>' +
+                (date ? '<div class="detail-row"><span class="detail-icon">📅</span><span class="detail-text">' + escapeHTML(date) + '</span></div>' : '') +
+            '</div>' +
+            '<a href="' + appURL + '" class="btn-primary btn-green">Download Links Up Golf</a>' +
+            (deepLink
+                ? '<a href="' + deepLink + '" class="btn-primary btn-outline">Already have the app? Open it</a>'
+                : '');
+
+        steps.innerHTML =
+            '<h2>How to join</h2>' +
+            '<div class="step"><span class="step-num">1</span><span>Tap <strong>Download Links Up Golf</strong> above to get the app</span></div>' +
+            '<div class="step"><span class="step-num">2</span><span>Open the app and create your account</span></div>' +
+            '<div class="step"><span class="step-num">3</span><span>You\'ll be taken to the tee time where you can request to join</span></div>';
+
+    } else {
+        // ─── Fallback (no params or unknown) ───
+        card.innerHTML =
+            '<div class="emoji">⛳️</div>' +
+            '<h1>Links Up Golf</h1>' +
+            '<p class="subtitle">Organize tee times and golf groups with your friends</p>' +
+            '<a href="' + appURL + '" class="btn-primary btn-green">Download Links Up Golf</a>';
+
+        steps.innerHTML = '';
+    }
+
+    function escapeHTML(str) {
+        var div = document.createElement('div');
+        div.appendChild(document.createTextNode(str));
+        return div.innerHTML;
+    }
+})();
 </script>
+
 </body>
 </html>
